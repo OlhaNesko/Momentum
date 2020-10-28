@@ -1,31 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/owfont-regular.css" />
-  <link rel="stylesheet" href="css/style.css">
-  <title>momentum</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Momentum</title>
 </head>
 <body>
-  <button class="btn"></button>
-  <time class="time"></time>
+<header class="header">
 
-  <!-- <div class="quote"></div> -->
-  <h1>
-    <span class="greeting"></span>
-    <span class="name" contenteditable="true"></span>
-  </h1>
-  <h2>What Is Your Focus For Today?</h2>
-  <h2 class="focus" contenteditable="true"></h2>
-  <div class="weather">
-    <div class="city" contenteditable="true">Kiev</div>
-    <i class="weather-icon owf"></i>
-    <div class="temperature"></div>
-    <div class="weather-description"></div>
-    <script src="script.js"></script>
-  </div>
+    <button class="btn-photos" id="btn-photos"><img src="./assets/icons/photograph.png" alt="" class="btn-photo-camera"></button>
 
+    <div class="quote-block">
+        <span class="quote" id="quote">Success is the ability to go from failure to failure without losing your enthusiasm</span>
+        <button class="btn_quote" id="btn_quote"><img src="./assets/icons/refresh.png" alt=""></button>
+    </div>
+
+</header>
+
+<main class="main">
+    <div class="time">
+        <time class="time-d" id="time-d"></time>
+        <time class="time-h" id="time-h"></time>
+    </div>
+    <div class="greeting">
+        <span class="greeting-phrase">Hello </span>
+        <span class="username" id="username" contenteditable="true"></span>
+    </div>
+    <div class="focus-block">
+        <h2>What Is Your Focus For Today?</h2>
+        <h2>
+            <span class="focus" id="focus" contenteditable="true"></span>
+        </h2>
+    </div>
+
+</main>
+
+<div class="modal modal-window-photos" id="modal-window-photos">
+    <div class="container-photos">
+        <div class="modal-content">
+            <!--all photoes from photos list -->
+            <div class="photos-card"></div>
+        </div>
+        <div class="buttons">
+            <button class="btn-ok-photo">Ok</button>
+            <button class="btn-cancel-photo">Exit</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-window-weather" id="modal-window-weather">
+    <div class="container-weather">
+        <div class="weather-block">
+
+        </div>
+        <div class="btns">
+            <button class="btn-ok-weather">ok</button>
+        </div>
+    </div>
+</div>
+
+<div class="weather">
+        <img src="./assets/icons/sunny.png" alt="weather_icon" class="weather-icon"
+             id="weather-icon">
+        <span class="city" id="city" contenteditable="true"></span>
+    </div>
+
+<script src="script.js"></script>
 </body>
 </html>

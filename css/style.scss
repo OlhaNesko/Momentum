@@ -1,0 +1,264 @@
+// для плавної зміни картинки
+$fiolet: #900C3F;
+$light-grey-h: #D5DBDB;
+$light-grey-rgba: rgba(213, 219, 219, 0.8);
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //justify-content: center;
+  text-align: center;
+  height: 100vh;
+  background-size: cover;
+  color: #000000;
+  transition: background-image 1s ease-in-out;
+}
+
+button {
+  border: 3px solid $fiolet;
+  border-radius: 10px;
+  background-color: $light-grey-rgba;
+  outline: none;
+  color: black;
+  font-size: 20px;
+  font-family: Arial;
+  font-weight: bold;
+  padding: 5px;
+}
+
+button:hover {
+  background-color: $fiolet;
+  color: white;
+}
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 10fr;
+  grid-gap: 10px;
+  align-items: start;
+
+  .btn-photos {
+    border: none;
+    outline: none;
+    background: none;
+  }
+
+  .weather {
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    align-items: center;
+
+    .city {
+      font-size: 20px;
+      font-weight: bold;
+      border-bottom: 2px solid orange;
+
+    }
+  }
+
+  .quote-block {
+    display: grid;
+    grid-template-columns: 7fr 64px;
+    margin-top: 15px;
+    text-align: right;
+    align-items: center;
+
+    .quote {
+    }
+
+    button {
+      text-decoration: none;
+      border: none;
+      background-color: transparent;
+      text-align: center;
+      width: 64px;
+      height: 64px;
+
+      img {
+        background: transparent;
+        width: 64px;
+        height: 64px;
+        margin-top: -5px;
+        margin-left: -5px;
+      }
+
+    }
+
+  }
+}
+
+
+//* {
+//  box-sizing: border-box;
+//  margin: 0;
+//  padding: 0;
+//}
+
+
+.main {
+  .time {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    .time-h, .time-d {
+      font-size: 4rem;
+    }
+  }
+
+  .greeting {
+    margin-bottom: 3rem;
+    font-size: 45px;
+  }
+
+  h2 {
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+  }
+
+  .focus, .username {
+    min-width: 100px;
+    min-height: 20px;
+    border-bottom: 2px solid orange;
+  }
+
+  .focus-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+}
+
+.modal-window-photos,
+.modal-window-weather {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.container-photos {
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  height: 80%;
+  overflow-y: auto;
+  background-color: rgba(201, 197, 208, 0.6);
+}
+
+.container-weather {
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  height: 45%;
+  overflow-y: auto;
+  background-color: rgba(201, 197, 208, 0.90);
+}
+
+
+.modal-window-photos {
+
+  .photos-card {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .photo-card {
+      padding: 10px;
+
+      img {
+        width: 400px;
+        height: 300px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+      }
+    }
+
+    .photo-card:hover {
+      -webkit-transform: scale(1.05);
+      transform: scale(1.05);
+    }
+  }
+}
+
+@media (max-width: 1090px) {
+  .modal-window-photos {
+
+    .photos-card {
+      .photo-card img {
+        width: 300px;
+        height: 250px;
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .modal-window-photos {
+
+    .photos-card {
+      grid-template-columns: 1fr;
+
+      .photo-card img {
+        width: 450px;
+        height: 350px;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 700px) {
+  .time-h, .time-h {
+    font-size: 6rem;
+  }
+}
+
+@media (max-width: 650px) {
+
+  .main {
+    align-items: end;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 90px 0 3rem 0px;
+
+    .time {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      .time-h, .time-d {
+        font-size: 2rem;
+      }
+    }
+
+    .greeting {
+      text-align: left;
+      font-size: 30px;
+    }
+
+  }
+
+
+  .modal-window-photos {
+
+    .photos-card {
+      grid-template-columns: 1fr;
+
+      .photo-card img {
+        width: 250px;
+        height: 200px;
+      }
+    }
+  }
+}
